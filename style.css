@@ -3,22 +3,35 @@ body {
     padding: 0;
     background-color: #ffb6c1; /* Светло-розовый фон */
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
 }
 
 #card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     animation: cardAnimation 3s forwards;
 }
 
 #card-image {
-    width: 80vw;
-    height: auto;
+    width: 400px;
+    height: 300px;
     display: block;
-    margin: auto;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#card-image:hover {
+    transform: scale(1.05);
 }
 
 #hello-kitty {
@@ -33,30 +46,38 @@ body {
 .kitty {
     width: 100px;
     height: auto;
-    animation: kittyAnimation 10s linear infinite;
+    animation: kittyAnimation 5s linear infinite;
 }
 
 @keyframes kittyAnimation {
     0% {
-        top: 0;
+        top: -10%;
     }
     100% {
-        top: 100vh;
+        top: 110%;
     }
 }
 
 #message {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     color: #fff;
     text-align: center;
     display: none;
+    animation: messageAnimation 2s forwards;
+}
+
+@keyframes messageAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #heart-container {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -76,6 +97,11 @@ body {
     font-size: 20px;
     cursor: pointer;
     animation: heartAnimation 2s forwards;
+    transition: transform 0.3s ease;
+}
+
+#heart:hover {
+    transform: scale(1.1);
 }
 
 #heart-text {
