@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Человек-Паук Анимация</title>
+    <title>Открытка для Насти</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="animation-container">
-        <img id="spiderman" src="spiderman.png" alt="Человек-Паук">
+    <!-- Открытка -->
+    <div id="card">
+        <img src="card-image.png" alt="Открытка" id="card-image">
     </div>
-    <main>
-        <header>
-            <h1>Добро пожаловать на мой сайт!</h1>
-        </header>
-        <p>Здесь будет основной контент.</p>
-    </main>
-    <footer>
-        <p>© 2024 Мой Сайт</p>
-    </footer>
+
+    <!-- Hello Kitty -->
+    <div id="hello-kitty">
+        <img src="hello-kitty.png" alt="Hello Kitty" class="kitty">
+    </div>
+
+    <!-- Поздравление -->
+    <div id="message">
+        <p>Дорогая Настя!</p>
+        <p>Поздравляю тебя с днем рождения!</p>
+    </div>
+
+    <!-- Сердце с надписью -->
+    <div id="heart-container">
+        <div id="heart" onclick="expandHeart()">
+            <p id="heart-text">JMI JMI</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
