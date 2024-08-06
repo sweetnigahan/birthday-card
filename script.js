@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Показ всех элементов
+    document.getElementById('card').classList.remove('hidden');
+    document.getElementById('hello-kitty').classList.remove('hidden');
+    document.getElementById('message').classList.remove('hidden');
+    document.getElementById('heart-container').classList.remove('hidden');
+
     // Показ сообщения после анимации открытки
     setTimeout(function() {
         document.getElementById('message').style.display = 'block';
@@ -23,6 +29,9 @@ function expandHeart() {
         if (clickCount >= 9) {
             heartText.innerHTML = 'Я тебя люблю';
             heart.style.transform = 'scale(10)';
+            setTimeout(() => {
+                heartText.style.display = 'none';
+            }, 1000); // Скрыть текст через секунду после увеличения
         }
     });
 }
