@@ -1,48 +1,104 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-    overflow: hidden; /* Скрыть скроллбар */
+    background-color: #ffb6c1; /* Светло-розовый фон */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-#animation-container {
+#card {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: cardAnimation 3s forwards;
+}
+
+#card-image {
+    width: 80vw;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#hello-kitty {
+    position: fixed;
     top: 0;
     right: 0;
-    width: 100px; /* Размер Человека-Паука */
-    height: 100px; /* Размер Человека-Паука */
+    width: 100px;
+    height: auto;
     overflow: hidden;
 }
 
-#spiderman {
-    position: absolute;
-    top: -100px; /* Начальная позиция вне экрана */
-    right: 0;
+.kitty {
     width: 100px;
-    height: 100px;
-    animation: spidermanAnimation 5s ease-in-out forwards;
+    height: auto;
+    animation: kittyAnimation 10s linear infinite;
 }
 
-@keyframes spidermanAnimation {
+@keyframes kittyAnimation {
     0% {
-        top: -100px;
-        transform: scale(0.5);
+        top: 0;
     }
     100% {
-        top: 50%;
+        top: 100vh;
+    }
+}
+
+#message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+
+#heart-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+#heart {
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    animation: heartAnimation 2s forwards;
+}
+
+#heart-text {
+    display: none;
+}
+
+@keyframes cardAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
         transform: scale(1);
     }
 }
 
-main {
-    padding: 20px;
-    text-align: center;
+@keyframes heartAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+    }
 }
 
-footer {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
